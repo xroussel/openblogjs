@@ -1,6 +1,7 @@
 # Javascript library for OpenBlog
 
 ![OpenBlog logo](https://openblog.app/openblog-logo.svg)
+
 **openblogjs** is a javascript library to integrate your OpenBlog anywhere in your app.
 You need an account from [openblog.app](openblog.app) to use this library.
 
