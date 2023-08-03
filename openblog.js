@@ -22,6 +22,20 @@ export default class OpenBlog {
     return res;
   }
 
+  async getSiteMap() {
+    let url = "https://openblog.app/api/get_sitemap?blog_id=" + this.blogId;
+
+    let res = await this.fetchRemotePageText(url);
+    return res;
+  }
+
+  fetchRemotePageText = async (url) => {
+    url = encodeURI(url);
+    const response = await fetch(url);
+    const content = await response.text();
+    return content;
+  };
+
   fetchRemotePage = async (url) => {
     url = encodeURI(url);
     const response = await fetch(url);
