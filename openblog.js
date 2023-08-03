@@ -23,7 +23,11 @@ export default class OpenBlog {
   }
 
   async getSiteMap() {
-    let url = "https://openblog.app/api/get_sitemap?blog_id=" + this.blogId;
+    let url =
+      "https://openblog.app/api/get_sitemap?blog_id=" +
+      this.blogId +
+      "&externalUrl=" +
+      this.basePath;
 
     let res = await this.fetchRemotePageText(url);
     return res;
