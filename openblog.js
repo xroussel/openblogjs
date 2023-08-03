@@ -8,7 +8,7 @@ export default class OpenBlog {
     this.basePath = basePath;
   }
 
-  async getPage(pageHandle) {
+  async getPage(pageHandle, pagination) {
     if (!pageHandle) pageHandle = "index";
     let url =
       "https://openblog.app/api/get_embedded_page?blog_id=" +
@@ -17,6 +17,10 @@ export default class OpenBlog {
       pageHandle +
       "&externalUrl=" +
       this.basePath;
+
+    if (pagination) {
+      url += "&page=" + pagination;
+    }
 
     let res = await this.fetchRemotePage(url);
     return res;
